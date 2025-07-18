@@ -4,6 +4,7 @@ const products = [
         image:"images/image-baklava-desktop.jpg",
         name:"corn",
         desc:"waffle with beries",
+        numOfStock:5,
         price:5.5
     },
      {
@@ -11,6 +12,7 @@ const products = [
         image:"images/image-panna-cotta-tablet.jpg",
         name:"pap",
         desc:"waffle with beries",
+        numOfStock:7,
         price:6.5
     },
      {
@@ -18,27 +20,31 @@ const products = [
         image:"images/image-waffle-desktop.jpg",
         name:"waffle",
         desc:"waffle with beries",
-        price:5.5
+        numOfStock:4,
+        price:4.5
     },
      {
         id:4,
         image:"images/image-baklava-desktop.jpg",
         name:"waffle",
         desc:"waffle with beries",
-        price:5.5
+        numOfStock:3,
+        price:6.5
     },
      {
         id:5,
         image:"images/image-baklava-desktop.jpg",
         name:"orange",
         desc:"waffle with beries",
-        price:5.5
+        numOfStock:9,
+        price:2.5
     } ,
      {
-        id:3,
+        id:6,
         image:"images/image-waffle-desktop.jpg",
         name:"waffle",
         desc:"waffle with beries",
-        price:5.5
+        numOfStock:5,
+        price:7.5
     }
 ]

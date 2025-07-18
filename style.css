@@ -75,6 +75,39 @@ body{
 .container .products .items .imgs button img{
     width: 10%;
 }
+/* a hidden button */
+/* .container .products .items .imgs .my-btn{
+    width: 40%;
+    background-color: hsl(14, 86%, 42%);
+    border-radius: 20px;
+    border: 1px solid  hsl(14, 86%, 42%);;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 6px;
+    margin-top: -1rem;
+    z-index: 100;
+}
+.container .products .items .imgs .my-btn .decr{
+    width: 20%;
+    aspect-ratio: 1/1;
+    border: 1px solid #000;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s ease;
+}
+.container .products .items .imgs .my-btn .decr:hover{
+    background-color: #fff;
+}
+.container .products .items .imgs .my-btn .decr img,p{
+    width: 40%;
+    color: white;
+} */
+
 
 .container .cart{
     width: 26%;
@@ -101,6 +134,10 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2px;
+    border: 1px solid #f1c1c1;
+    padding: 3px;
+    border-radius: 8px;
 }
 .container .cart .cart-items .cart-details .item-name{
     display: flex;
@@ -123,11 +160,45 @@ body{
 .container .cart .cart-items .cart-details .item-name .details p{
     font-size: 14px;
     font-weight: lighter;
+    color: #000;
+}
+/* .container .cart .cart-items .cart-details .item-name .details .my-btn{
+    background-color: red;
+} */
+.container .cart .cart-items .cart-details .item-name .my-btn{
+    width: 100%;
+    background-color: hsl(14, 86%, 42%);
+    border-radius: 5px;
+    border: 1px solid  hsl(14, 86%, 42%);;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    padding: 1px;
+    gap: 6px;
+}
+.container .cart .cart-items .cart-details .item-name .my-btn .decr{
+    width: 80%;
+    padding: 1px;
+    aspect-ratio: 1/1;
+   
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s ease;
+}
+.container .cart .cart-items .cart-details .item-name .my-btn .decr:hover{
+    background-color: #fff;
+}
+.container .cart .cart-items .cart-details .item-name .my-btn .decr img, p{
+    width: 80%;
+    color: white;
 }
 .container .cart .cart-items .cart-details .rem-icon{
     width: 7.5%;
     border: 1px solid #000;
-    
     aspect-ratio: 1/1;
     padding: 2px;
     border-radius: 50%;
@@ -138,6 +209,7 @@ body{
 .container .cart .cart-items .cart-details .rem-icon img{
     width: 90%;
 }
+
 
 /* - Red: hsl(14, 86%, 42%)
 - Green: hsl(159, 69%, 38%)
