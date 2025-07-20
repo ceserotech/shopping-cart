@@ -1,128 +1,99 @@
+  const products = [
+            { id: 1, image: "images/image-baklava-desktop.jpg", name: "corn", desc: "waffle with berries", numOfStock: 5, price: 5.5 },
+            { id: 2, image: "images/image-panna-cotta-tablet.jpg", name: "pap", desc: "waffle with berries", numOfStock: 7, price: 6.5 },
+            { id: 3, image: "images/image-waffle-desktop.jpg", name: "waffle", desc: "waffle with berries", numOfStock: 4, price: 4.5 },
+            { id: 4, image: "images/image-baklava-desktop.jpg", name: "waffle", desc: "waffle with berries", numOfStock: 3, price: 6.5 },
+            { id: 5, image: "images/image-baklava-desktop.jpg", name: "orange", desc: "waffle with berries", numOfStock: 9, price: 2.5 },
+            { id: 6, image: "images/image-waffle-desktop.jpg", name: "waffle", desc: "waffle with berries", numOfStock: 5, price: 7.5 }
+        ];
 
-const container = document.querySelector(".items-container")
+        const cart = [];
 
-const items = document.querySelector(".items")
-
-
-// displaying products avaliable
-for (let i = 0; i < products.length; i++) {
-
-    const goods = container.innerHTML += `
-            <div class="items">
-                <div class="imgs">
-                    <img src="${products[i].image}" alt="">
-                    <button class="my-cart-btn" onclick="addToCart(${products[i].id})">
-                        <img src="images/icon-add-to-cart.svg" alt="">
-                        Add to Cart
-                    </button>
-                    
-                </div>
-                <p>${products[i].name}</p>
-                <h4>${products[i].desc}</h4>
-                <h3>$${products[i].price}</h3>
-            </div>
-    `
-
-}
-
-// cart
-const cart = [];
-// adding to cart
-function addToCart(id) {
-
-    if (cart.some((item) => item.id === id)) {
-
-        changenum('plus', id)
-    } else {
-        const prod = products.find((item) => item.id === id)
-
-        cart.push({
-            ...prod,
-            numOfItem: 1,
-        })
-    }
-    updatecart()
-}
-
-// cart update function
-function updatecart() {
-    add()
-    updatePrice()
-}
-
-// displaying items in cart
-function add() {
-    const cartItems = document.querySelector(".cart-items");
-    cartItems.innerHTML = ""
-    cart.forEach((items) => {
-        cartItems.innerHTML += `
-     <div class="cart-details">
-                    <div class="item-name">
-                        <h4>${items.name}</h4>
-                        <div class="details">
-                            <h5>${items.numOfItem}x</h5>
-                            <p>@$${items.price}</p>
-                            <p>$5.5</p>
-                             <div class="my-btn">
-                                <div class="decr" onclick="changenum('minus', ${items.id})">
-                                    <img src="images/icon-decrement-quantity.svg" alt="">
-                                </div>
-                                <p>${items.numOfItem}</p>
-                                <div class="decr" onclick="changenum('plus', ${items.id})">
-                                    <img src="images/icon-increment-quantity.svg" alt="">
-                                </div>
+        function renderProducts() {
+            const container = document.getElementById("product-list");
+            container.innerHTML = "";
+            products.forEach(prod => {
+                container.innerHTML += `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="${prod.image}" alt="${prod.name}" class="card-img-top product-img">
+                            <div class="card-body text-center">
+                                <p class="card-text text-muted">${prod.name}</p>
+                                <h5 class="card-title">${prod.desc}</h5>
+                                <h6 class="text-danger">$${prod.price}</h6>
+                                <button class="cart-btn w-100 mt-2" onclick="addToCart(${prod.id})">
+                                    <img src="images/icon-add-to-cart.svg" alt="cart icon">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="rem-icon" onclick="removeItem(${items.id})">
-                        <img src="images/icon-remove-item.svg" alt="">
-                    </div> 
-                </div>
-    `
-    })
-}
+                `;
+            });
+        }
 
-// removing item from cart with button
-function removeItem(ids) {
-    carts = cart.filter((item) => item.id !== ids)
-    console.log(carts)
-    updatecart()
-   
-}
-
-// udating number of goods in the cart
-function changenum(action, id) {
-
-
-    cart.map((item) => {
-        let numOfItems = item.numOfItem
-        if (item.id == id) {
-            if (action === "plus" && item.numOfItem < item.numOfStock) {
-                item.numOfItem++
-            } else if (item.numOfStock > 1 && action === "minus") {
-                item.numOfItem--
+        function addToCart(id) {
+            if (cart.some(item => item.id === id)) {
+                changenum('plus', id);
+            } else {
+                const prod = products.find(item => item.id === id);
+                cart.push({ ...prod, numOfItem: 1 });
             }
+            updatecart();
         }
-        return {
-            ...item,
-            numOfItems,
+
+        function changenum(action, id) {
+            cart.forEach(item => {
+                if (item.id === id) {
+                    if (action === "plus" && item.numOfItem < item.numOfStock) item.numOfItem++;
+                    if (action === "minus" && item.numOfItem > 1) item.numOfItem--;
+                }
+            });
+            updatecart();
         }
-    })
 
-    updatecart()
-}
+        function removeItem(id) {
+            const index = cart.findIndex(item => item.id === id);
+            if (index !== -1) cart.splice(index, 1);
+            updatecart();
+        }
 
-function updatePrice() {
-    const numOfItem = document.querySelector(".numofitem");
-    const totalPricee = document.querySelector(".totalprice");
-    let totalPrice = 0
-    let totalGoods = 0
-    cart.forEach((item) => {
-        totalGoods += item.numOfItem;
-        totalPrice += item.price * item.numOfItem
-    })
-    numOfItem.innerHTML = "numver of item= " + totalGoods
-    totalPricee.innerHTML = "total price = $" + totalPrice
-}
+        function updatecart() {
+            const cartItems = document.getElementById("cart-items");
+            const numOfItem = document.querySelector(".numofitem");
+            const totalPricee = document.querySelector(".totalprice");
 
+            cartItems.innerHTML = "";
+            let totalGoods = 0;
+            let totalPrice = 0;
 
+            cart.forEach(item => {
+                totalGoods += item.numOfItem;
+                totalPrice += item.price * item.numOfItem;
+
+                cartItems.innerHTML += `
+                    <div class="cart-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6>${item.name}</h6>
+                            <div class="d-flex align-items-center gap-3">
+                                <small>${item.numOfItem}x @$${item.price}</small>
+                                <strong>$${(item.numOfItem * item.price).toFixed(2)}</strong>
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-outline-danger" onclick="changenum('minus', ${item.id})">-</button>
+                                    <button class="btn btn-sm btn-outline-dark" disabled>${item.numOfItem}</button>
+                                    <button class="btn btn-sm btn-outline-success" onclick="changenum('plus', ${item.id})">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/icon-remove-item.svg" alt="remove" class="remove-btn" onclick="removeItem(${item.id})">
+                    </div>
+                `;
+            });
+
+            numOfItem.innerHTML = `Items: ${totalGoods}`;
+            totalPricee.innerHTML = `Total: $${totalPrice.toFixed(2)}`;
+        }
+
+        window.onload = () => {
+            renderProducts();
+        };

@@ -1,222 +1,39 @@
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: sans-serif;
-}
-body{
-    background-color: #eee;
-    padding: 1rem;
-}
-.container{
-    width: 100%;
-    display: flex;
-    gap: 10px;
-    background-color: #fff;
-    border-radius: 2px;
-    padding: 8px;
-}
-.container .products{
-    width: 72%;
-   
-}
-.container .products h1{
-    margin: 5px 0px;
-    font-size:30px;
-}
-.container .products .items-container{
-    width: 100%;
-    margin-top: 4px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-.container .products .items{
-    width: 30%;
-}
-.container .products .items p{
-    font-weight: lighter;
-    font-size: small;
-}
-.container .products .items h4{
-    font-weight: lighter;
-    margin: 2px 0px;
-}
-.container .products .items h3{
-    font-weight: lighter;
-    color:  hsl(14, 86%, 42%);;
-}
-.container .products .items .imgs{
-    width: 100%;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.container .products .items .imgs img{
-    width: 100%;
-    border-radius: 4px;
-    filter: brightness(0.6);
-}
-.container .products .items .imgs button{
-    width: 50%;
-    background-color: #fff;
-    border-radius: 20px;
-    border: 1px solid  hsl(14, 86%, 42%);;
-    display: flex;
-    gap: 3px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 6px;
-    margin-top: -1rem;
-    z-index: 100;
-}
-.container .products .items .imgs button img{
-    width: 10%;
-}
-/* a hidden button */
-/* .container .products .items .imgs .my-btn{
-    width: 40%;
-    background-color: hsl(14, 86%, 42%);
-    border-radius: 20px;
-    border: 1px solid  hsl(14, 86%, 42%);;
-    display: none;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    padding: 6px;
-    margin-top: -1rem;
-    z-index: 100;
-}
-.container .products .items .imgs .my-btn .decr{
-    width: 20%;
-    aspect-ratio: 1/1;
-    border: 1px solid #000;
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all .4s ease;
-}
-.container .products .items .imgs .my-btn .decr:hover{
-    background-color: #fff;
-}
-.container .products .items .imgs .my-btn .decr img,p{
-    width: 40%;
-    color: white;
-} */
-
-
-.container .cart{
-    width: 26%;
-    background-color: #fff;
-    border-radius: 2px;
-    padding:8px 4px;
-    margin-top: 5px;
-}
-.container .cart h1{
-    font-size: 20px;
-    color: hsl(14, 86%, 42%);
-}
-.container .cart .cart-items{
-    background-color: #eee;
-    border-radius: 5px;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.container .cart .cart-items .cart-details{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2px;
-    border: 1px solid #f1c1c1;
-    padding: 3px;
-    border-radius: 8px;
-}
-.container .cart .cart-items .cart-details .item-name{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-.container .cart .cart-items .cart-details .item-name h4{
-    font-weight:lighter ;
-    font-size: 18px;
-}
-.container .cart .cart-items .cart-details .item-name .details{
-    display: flex;
-    gap: 15px;
-}
-.container .cart .cart-items .cart-details .item-name .details h5{
-    font-size: 14px;
-    font-weight: lighter;
-    color: hsl(14, 86%, 42%);
-}
-.container .cart .cart-items .cart-details .item-name .details p{
-    font-size: 14px;
-    font-weight: lighter;
-    color: #000;
-}
-/* .container .cart .cart-items .cart-details .item-name .details .my-btn{
-    background-color: red;
-} */
-.container .cart .cart-items .cart-details .item-name .my-btn{
-    width: 100%;
-    background-color: hsl(14, 86%, 42%);
-    border-radius: 5px;
-    border: 1px solid  hsl(14, 86%, 42%);;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    text-align: center;
-    padding: 1px;
-    gap: 6px;
-}
-.container .cart .cart-items .cart-details .item-name .my-btn .decr{
-    width: 80%;
-    padding: 1px;
-    aspect-ratio: 1/1;
-   
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all .4s ease;
-}
-.container .cart .cart-items .cart-details .item-name .my-btn .decr:hover{
-    background-color: #fff;
-}
-.container .cart .cart-items .cart-details .item-name .my-btn .decr img, p{
-    width: 80%;
-    color: white;
-}
-.container .cart .cart-items .cart-details .rem-icon{
-    width: 7.5%;
-    border: 1px solid #000;
-    aspect-ratio: 1/1;
-    padding: 2px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.container .cart .cart-items .cart-details .rem-icon img{
-    width: 90%;
-}
-
-
-/* - Red: hsl(14, 86%, 42%)
-- Green: hsl(159, 69%, 38%)
-
-- Rose 50: hsl(20, 50%, 98%)
-- Rose 100: hsl(13, 31%, 94%)
-- Rose 300: hsl(14, 25%, 72%)
-- Rose 400: hsl(7, 20%, 60%)
-- Rose 500: hsl(12, 20%, 44%)
-- Rose 900: hsl(14, 65%, 9%) */
+   body {
+            background-color: #eee;
+        }
+        .product-img {
+            filter: brightness(0.6);
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+        .cart-btn, .quantity-btn {
+            border-radius: 20px;
+            border: 1px solid hsl(14, 86%, 42%);
+            background-color: white;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: -1.5rem;
+            z-index: 10;
+            position: relative;
+        }
+        .cart-btn img, .quantity-btn img {
+            width: 16px;
+        }
+        .cart-header {
+            color: hsl(14, 86%, 42%);
+        }
+        .cart-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+        .remove-btn {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+        }
