@@ -4,147 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shopping cart</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="products">
-            <h1>Desserts</h1>
-            <div class="items-container">
-
-
-                <!-- <div class="items">
-                    <div class="imgs">
-                        <img src="images/image-baklava-desktop.jpg" alt="">
-                        <button>
-                            <img src="images/icon-add-to-cart.svg" alt="">
-                            Add to Cart
-                        </button>
-
-                        <button class="my-btn">
-                            <div class="decr">
-                                <img src="images/icon-decrement-quantity.svg" alt="">
-                            </div>
-                            <p>1</p>
-                            <div class="decr">
-                                <img src="images/icon-increment-quantity.svg" alt="">
-                            </div>
-                        </button>
-
-                    </div>
-                    <p>Waffle</p>
-                    <h4>Waffles with Berries</h4>
-                    <h3>$6.5</h3>
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+            <!-- Products Section -->
+            <div class="col-lg-8">
+                <h1 class="mb-3">Desserts</h1>
+                <div class="row" id="product-list">
+                    <!-- JS will render products here -->
                 </div>
-                <div class="items">
-                    <div class="imgs">
-                        <img src="images/image-baklava-desktop.jpg" alt="">
-                        <button>
-                            <img src="images/icon-add-to-cart.svg" alt="">
-                            Add to Cart
-                        </button>
-
-                    </div>
-                    <p>Waffle</p>
-                    <h4>Waffles with Berries</h4>
-                    <h3>$6.5</h3>
-                </div>
-                <div class="items">
-                    <div class="imgs">
-                        <img src="images/image-baklava-desktop.jpg" alt="">
-                        <button>
-                            <img src="images/icon-add-to-cart.svg" alt="">
-                            Add to Cart
-                        </button>
-
-                    </div>
-                    <p>Waffle</p>
-                    <h4>Waffles with Berries</h4>
-                    <h3>$6.5</h3>
-                </div>
-                <div class="items">
-                    <div class="imgs">
-                        <img src="images/image-baklava-desktop.jpg" alt="">
-                        <button>
-                            <img src="images/icon-add-to-cart.svg" alt="">
-                            Add to Cart
-                        </button>
-
-                    </div>
-                    <p>Waffle</p>
-                    <h4>Waffles with Berries</h4>
-                    <h3>$6.5</h3>
-                </div>
-                <div class="items">
-                    <div class="imgs">
-                        <img src="images/image-baklava-desktop.jpg" alt="">
-                        <button>
-                            <img src="images/icon-add-to-cart.svg" alt="">
-                            Add to Cart
-                        </button>
-
-                    </div>
-                    <p>Waffle</p>
-                    <h4>Waffles with Berries</h4>
-                    <h3>$6.5</h3>
-                </div>
-                <div class="items">
-                    <div class="imgs">
-                        <img src="images/image-baklava-desktop.jpg" alt="">
-                        <button>
-                            <img src="images/icon-add-to-cart.svg" alt="">
-                            Add to Cart
-                        </button>
-
-                    </div>
-                    <p>Waffle</p>
-                    <h4>Waffles with Berries</h4>
-                    <h3>$6.5</h3>
-                </div> -->
-
             </div>
-        </div>
 
-        <div class="cart">
-            <h1>Your Carts(7)</h1>
-            <div class="cart-items">
-                <!-- <div class="cart-details">
-                    <div class="item-name">
-                        <h4>fruit</h4>
-                        <div class="details">
-                            <h5>1x</h5>
-                            <p>@$2</p>
-                            <p>$5.5</p>
-                            <div class="my-btn">
-                                <div class="decr">
-                                    <img src="images/icon-decrement-quantity.svg" alt="">
-                                </div>
-                                <p>1</p>
-                                <div class="decr">
-                                    <img src="images/icon-increment-quantity.svg" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="rem-icon">
-                        <img src="images/icon-remove-item.svg" alt="">
-
-                    </div>
-                </div> -->
-
-            </div>
-            <div class="total" style="display: flex; justify-content: space-between;">
-                <div><h4 class="numofitem"></h4></div>
-                <h4 class="totalprice"></h4>
+            <!-- Cart Section -->
+            <div class="col-lg-4">
+                <h3 class="cart-header">Your Cart</h3>
+                <div class="bg-light p-3 rounded" id="cart-items">
+                    <!-- JS will render cart items here -->
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                    <h5 class="numofitem"></h5>
+                    <h5 class="totalprice"></h5>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="products.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/script.js"></script>
 </body>
 
 </html>
